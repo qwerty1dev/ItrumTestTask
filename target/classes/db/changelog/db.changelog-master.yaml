@@ -1,0 +1,150 @@
+#databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: demo
+#      changes:
+#        - createTable:
+#            tableName: wallets
+#            columns:
+#              - column:
+#                  name: id
+#                  type: uuid
+#                  constraints:
+#                    primaryKey: true
+#              - column:
+#                  name: balance
+#                  type: numeric(19,2)
+#                  constraints:
+#                    nullable: false
+#        - addColumn:
+#            tableName: wallets
+#            columns:
+#              - column:
+#                  name: version
+#                  type: bigint
+#                  defaultValueNumeric: 0
+
+#
+#databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: you
+#      changes:
+#        - createTable:
+#            tableName: wallets
+#            columns:
+#              - column:
+#                  name: id
+#                  type: uuid
+#                  constraints:
+#                    primaryKey: true
+#              - column:
+#                  name: balance
+#                  type: numeric(19,2)
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: version
+#                  type: bigint
+#                  constraints:
+#                    nullable: false
+
+
+#databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: you
+#      preConditions:
+#        onFail: MARK_RAN
+#        onError: CONTINUE
+#        checks:
+#          - not:
+#              tableExists:
+#                tableName: wallets
+#      changes:
+#        - createTable:
+#            tableName: wallets
+#            columns:
+#              - column:
+#                  name: id
+#                  type: uuid
+#                  constraints:
+#                    primaryKey: true
+#                    nullable: false
+#              - column:
+#                  name: balance
+#                  type: numeric(19,2)
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: version
+#                  type: bigint
+#                  constraints:
+#                    nullable: false
+
+
+#databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: you
+#
+#      preConditions:
+#        onFail: MARK_RAN
+#        onError: CONTINUE
+#                   - not:
+#                   tableExists:
+#                     tableName: wallets
+#
+#      changes:
+#        - createTable:
+#            tableName: wallets
+#            columns:
+#              - column:
+#                  name: id
+#                  type: uuid
+#                  constraints:
+#                    primaryKey: true
+#                    nullable: false
+#              - column:
+#                  name: balance
+#                  type: numeric(19,2)
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: version
+#                  type: bigint
+#                  constraints:
+#                    nullable: false
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: you
+
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: CONTINUE
+        - not:
+            tableExists:
+              tableName: wallets
+
+      changes:
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: numeric(19,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: bigint
+                  constraints:
+                    nullable: false
+
